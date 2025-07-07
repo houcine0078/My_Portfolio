@@ -13,7 +13,7 @@ export default function ProjectsSection() {
         "Application web complète avec CRUD et authentification sécurisée pour la gestion des ressources humaines.",
       image: "/images/StaffFlow-employeInterface.png?height=300&width=500",
       tags: ["Python", "Django", "MySQL", "CRUD", "Authentication"],
-      github: "#",
+      github: "https://github.com/houcine0078/StaffFlow",
       live: "#",
     },
     {
@@ -22,7 +22,7 @@ export default function ProjectsSection() {
         "Application mobile permettant aux utilisateurs de trouver, créer et rejoindre des matchs de football près de chez eux.",
       image: "/images/KickMatch-Interface.png?height=300&width=500",
       tags: ["Kotlin", "Android Studio", "MySQL", "Retrofit", "API REST"],
-      github: "#",
+      github: "https://github.com/houcine0078/KickMatch",
       live: "#",
     },
     {
@@ -31,7 +31,7 @@ export default function ProjectsSection() {
         "Application de chat avec interface réactive et intégration Firebase pour la messagerie en temps réel.",
       image: "/images/LinkApp-chatInterface.png?height=300&width=500",
       tags: ["Java", "Java Swing", "Firebase", "Realtime Database"],
-      github: "#",
+      github: "https://github.com/houcine0078/LinkApp",
       live: "#",
     },
   ]
@@ -60,12 +60,28 @@ export default function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-green-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                  <Button size="sm" variant="secondary" className="hover:scale-110 transition-transform duration-300">
-                    <Github className="h-4 w-4" />
-                  </Button>
-                  <Button size="sm" variant="secondary" className="hover:scale-110 transition-transform duration-300">
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
+                  {project.github && project.github !== "#" && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button size="sm" variant="secondary" className="hover:scale-110 transition-transform duration-300">
+                        <Github className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  )}
+                  {project.live && project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button size="sm" variant="secondary" className="hover:scale-110 transition-transform duration-300">
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -90,6 +106,6 @@ export default function ProjectsSection() {
           ))}
         </div>
       </div>
-    </section>
-  )
-}
+          </section>
+        );
+    }

@@ -18,6 +18,44 @@ export default function ExperienceSection() {
         <Card className="p-8 hover:shadow-xl transition-all duration-300">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
             <div>
+              <h3 className="text-2xl font-bold mb-2">Stagiaire en Développement Web</h3>
+              <p className="text-lg text-green-600 dark:text-green-400 mb-2">Branche Prévoyance de la CDG</p>
+              <p className="text-gray-600 dark:text-gray-300">Rabat, MA</p>
+            </div>
+            <div className="flex items-center text-gray-600 dark:text-gray-300 mt-4 md:mt-0">
+              <Calendar className="h-4 w-4 mr-2" />
+              <span>juillet 2025 – Aout 2025</span>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              "Connexion des utilisateurs via identifiants LDAP.",
+              "Tableau de bord utilisateur personnalisé selon son rôle",
+              "Système d'authentification sécurisé et 2FA développé avec Laravel Jetstream,",
+            ].map((item, index) => (
+              <div key={index} className="flex items-start hover:translate-x-2 transition-transform duration-300">
+                <div className="w-2 h-2 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                <p className="text-gray-600 dark:text-gray-300">{item}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-2 mt-6">
+            {["Php", "Laravel","tailwind","LDAP", "SqlServer", "Git", ].map((tech, index) => (
+              <Badge
+                key={index}
+                variant="secondary"
+                className="hover:bg-green-100 dark:hover:bg-green-900 transition-colors duration-300"
+              >
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </Card>
+        <Card className="p-8 hover:shadow-xl transition-all duration-300">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+            <div>
               <h3 className="text-2xl font-bold mb-2">Stagiaire en Développement Mobile</h3>
               <p className="text-lg text-green-600 dark:text-green-400 mb-2">GreenTel, Société de télécommunication</p>
               <p className="text-gray-600 dark:text-gray-300">Rabat, MA</p>

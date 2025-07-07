@@ -9,10 +9,12 @@ import ProjectsSection from "./projects-section"
 import EducationSection from "./education-section"
 import ContactSection from "./contact-section"
 import Footer from "./footer"
+import { useTheme } from "next-themes"
 
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,8 +67,8 @@ export default function Portfolio() {
         <Navigation
           activeSection={activeSection}
           scrollToSection={scrollToSection}
-          toggleDarkMode={toggleDarkMode}
-          darkMode={darkMode}
+          theme={theme}
+          setTheme={setTheme}
         />
         <HeroSection scrollToSection={scrollToSection} />
         <AboutSection />
